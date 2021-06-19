@@ -1,5 +1,6 @@
 package com.jaime.threesec
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
@@ -12,8 +13,9 @@ class MainActivity : AppCompatActivity() {
 
 
     lateinit var chronometer: Chronometer
-
     lateinit var button: AppCompatButton
+
+    lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +23,9 @@ class MainActivity : AppCompatActivity() {
 
         setUpViews()
         setUpListeners()
+
+        mediaPlayer = MediaPlayer.create(baseContext, R.raw.wrong_answer)
+
     }
 
     // Check what the remaining time of the count down on negative numbers
@@ -56,6 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
         chronometer.setOnChronometerTickListener {
             if (isEndOfCountDown()) {
+                mediaPlayer.start()
                 button.isEnabled = true
                 stopCountDown()
                 reset()
