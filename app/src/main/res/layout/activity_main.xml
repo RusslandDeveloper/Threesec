@@ -6,4 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <Chronometer
+        android:id="@+id/chronometer_threesec"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textSize="80sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="216dp"
+        android:layout_height="163dp"
+        android:background="@color/red"
+        android:text="@string/start"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer_threesec"
+        app:layout_goneMarginTop="20dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
